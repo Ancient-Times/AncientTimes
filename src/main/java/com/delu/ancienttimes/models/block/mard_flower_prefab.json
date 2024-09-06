@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "stage_3",
-		"particle": "stage_3"
+		"0": "#crop",
+		"particle": "#crop"
 	},
 	"elements": [
 		{
