@@ -14,12 +14,13 @@ public class DataGenerator {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
-            net.minecraft.data.DataGenerator gen = event.getGenerator();
-            ExistingFileHelper helper = event.getExistingFileHelper();
-            PackOutput output = gen.getPackOutput();
+        net.minecraft.data.DataGenerator gen = event.getGenerator();
+        ExistingFileHelper helper = event.getExistingFileHelper();
+        PackOutput output = gen.getPackOutput();
 
-            gen.addProvider(event.includeClient(), new ModItemModelsProvider(output, helper));
-            gen.addProvider(event.includeClient(), new ModLanguageProvider(output));
+        gen.addProvider(event.includeClient(), new ModItemModelsProvider(output, helper));
+        gen.addProvider(event.includeClient(), new ModLanguageProvider(output));
+        gen.addProvider(event.includeClient(), new ModBlockSTatesProvider(output, helper));
     }
 }
 
